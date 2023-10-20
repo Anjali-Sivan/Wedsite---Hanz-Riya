@@ -1,26 +1,27 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-/*
-Tested working with PHP5.4 and above (including PHP 7 )
+$subject = 'Marriage Wishes'; // Subject of your email
+$to = 'hanzzhaneefa@gmail.com'; // Recipient's E-mail
 
- */
-require_once './vendor/autoload.php';
+$name = $_REQUEST['name'];
+$email = $_REQUEST['email'];
+$msg = $_REQUEST['message'];
 
-use FormGuide\Handlx\FormHandler;
+$email_from = $name . ' <' . $email . '>';
 
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
+$headers .= "From: " . $email_from . "\r\n"; // Sender's E-mail
+$headers .= "Reply-To: " . $email . "\r\n";
 
-$pp = new FormHandler(); 
+$message = 'Name: ' . $name . "<br>";
+$message .= 'Email: ' . $email . "<br>";
+$message .= 'Message: ' . $msg;
 
-$validator = $pp->getValidator();
-$validator->fields(['Name','Email'])->areRequired()->maxLength(50);
-$validator->field('Email')->isEmail();
-$validator->field('Guest')->maxLength(6000);
-$validator->field('Attend')->maxLength(6000);
-
-
-
-$pp->sendEmailTo('info@designesia.com'); // ← Your email here
-
-echo $pp->process($_POST);
+if (mail($to, $subject, $message, $headers)) {
+    // Transfer the value 'sent' to your JavaScript function for showing a success message.
+    echo 'sent';
+} else {
+    // Transfer the value 'failed' to your JavaScript function for showing an error message.
+    echo 'failed';
+}
+?>
