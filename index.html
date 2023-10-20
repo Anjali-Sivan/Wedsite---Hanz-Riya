@@ -33,6 +33,17 @@
 
     <!-- color scheme -->
     <link rel="stylesheet" href="css/color.css" type="text/css" id="colors">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   $(document).ready(function() {
+       $('.video-container').click(function() {
+           var videoID = 'SS4jlFNsuB4'; // Video ID from your URL
+           var iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoID + '?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+           $(this).html(iframe);
+       });
+   });
+</script>
+
 </head>
 
 <body id="homepage">
@@ -527,6 +538,37 @@
                 </div>
             </section>
 
+             <section id="section-wishes">
+                <div class="container">
+                       <div id="tab2" class="tab_single_content">
+                         <div class="col-md-12">
+                            <div class="de_tab tab_style_3 text-center">
+                         <ul class="de_nav">
+                                    <li class="active" data-link="#section-services-tab"><span>Special Thanks To</span></li>
+                                </ul>
+                                </div>
+                                </div>
+                            <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <h4>
+                                                     <a href="https://instagram.com/plan_b_stories_?igshid=MzRlODBiNWFlZA=="
+                                                target="_blank">
+                                                    <i class="fa fa-instagram"></i></a>
+                                                     Plan 'B' Stories
+                                                </h4>
+                                                
+                                       <div class="video-container text-center">
+   <img src="https://img.youtube.com/vi/SS4jlFNsuB4/maxresdefault.jpg" alt="Video Thumbnail">
+   <div class="play-button"></div>
+</div>
+
+
+                                            </div>
+                                       
+                                    </div>
+                </div>
+            </section>
+
             <section id="section-wishes">
                 <div class="container">
                        <div id="tab2" class="tab_single_content">
@@ -706,3 +748,8 @@
 </body>
 
 </html>
+
+
+
+
+ 

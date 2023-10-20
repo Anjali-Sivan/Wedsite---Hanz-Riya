@@ -6638,3 +6638,18 @@ a, img {
 	}
 }
 
+.video-container {
+  
+   cursor: pointer;
+   text-align: center;
+}
+
+.play-button {
+   background: url('play-button.png') center center no-repeat; /* Use your own play button image */
+   width: 80px; /* Adjust the width and height as needed */
+   height: 80px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
